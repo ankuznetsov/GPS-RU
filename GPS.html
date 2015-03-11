@@ -1,0 +1,2930 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPS и пространственные данные в эпидемиологии</title>
+  <meta charset="utf-8">
+  <meta name="description" content="GPS и пространственные данные в эпидемиологии">
+  <meta name="author" content="Андрей Николаевич Кузнецов, к. м. н., с. н. с.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>GPS и пространственные данные в эпидемиологии</h1>
+    <h2>Современные аспекты паразитолого-энтомологической работы в рамках эпидемиологического надзора за клещевыми инфекциями</h2>
+    <p>Андрей Николаевич Кузнецов, к. м. н., с. н. с.<br/>Казахский научный центр карантинных и зоонозных инфекций</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Содержание</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>
+<a class='btn btn-large btn-warning' href='#3'>Для чего это?</a>
+<p/>
+<p/>
+<a class='btn btn-large btn-success' href='#19'>Немного теории</a>
+<p/>
+<p>
+<a class='btn btn-large btn-primary' href='#30'>Портативный GPS навигатор Garmin Dakota&#174; 20</a>
+<p/>
+<p>
+<a class='btn btn-large btn-info' href='index.html#33'>Подключение элементов питания</a>
+<p/>
+<p>
+<a class='btn btn-large btn-warning' href='#36'>BaseCamp: перед тем, как в первый раз включить навигатор</a>
+<p/>
+<p>
+<a class='btn btn-large btn-success' href='#80'>Полевая работа с Garmin Dakota&#174; 20</a>
+</p>
+
+<p>
+<a class='btn btn-large btn-primary' href='#113'>Работа с маршрутами и треками в BaseCamp</a>
+</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:darkgrey;">
+  <article data-timings="">
+    <p><a name='3'></p>
+
+<div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="7">
+        Для чего это?
+    </font>
+</div>
+
+<p></a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>GPS</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Navstar.png' />
+</div>
+
+<div align="justify">
+<h3>Глобальная система позиционирования (GPS): для чего она нужна эпидемиологу?</h3>
+<br/>
+<p>В данной лекции мы рассмотрим работу с пространственными данными с использованием системы глобального позиционирования.</p>
+<br/>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Эпидемиология и пространственные данные</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li>Эпидемиология - это наука и практическая дисциплина о причинах и условиях возникновения и распространения заболеваний и патологических состояний в определённой популяции.</li>
+<li>Описательная эпидемиология призвана ответить на вопросы &quot;Что?&quot; (описание случая), &quot;Кто?&quot; (описание популяции), &quot;Когда?&quot; (время возникновения или регистрации случаев) и &quot;Где?&quot; (место регистрации случаев).</li>
+<li>Поэтому описание любой эпидемической вспышки или фоновой ситуации невозможно без оперирования <strong>пространственными данными</strong>.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Пространственные данные</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li><strong>Под пространственными данными</strong> (иначе географические данные или геоданные) понимают данные о пространственных объектах и их наборах. Проще говоря, пространственные данные имеют привязку к каким-либо координатам земной поверхности.</li>
+<li>В своей практической работе эпидемиологи имеют дело как раз-таки с пространственными данными: заболеваемость в разрезе административных территорий (области, районы), абсолютные числа заболевших в тех или иных учреждениях, качество водоснабжения в населённых пунктах и т. п. </li>
+<li>Эпидемиология занимается анализом пространственных (&quot;где?&quot;) и связанных (атрибутивных данных).</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Пространственная эпидемиология</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Пространственная эпидемиология занимается описанием и анализом причин территориального (географического) распределения заболеваний:</p>
+
+<ul class = "build incremental">
+<li>Картирование заболеваний;</li>
+<li>Пространственный анализ (анализ наложением, пространственно-временная корреляция и т. п.);</li>
+<li>Кластеризация и надзор за распространением заболеваний.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Джон Сноу и картирование заболеваний</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Карты, планы и схемы очень часто используются эпидемиологами в расследовании вспышек заболеваний.</li>
+<li>Самым ранним документированным эпидемиологическим исследованием, использующим картирование и пространственный анализ, является изучение вспышки холеры в Лондоне англиским врачом Джоном Сноу.</li>
+<li>В 1854 году в квартале Лондона, Сохо, возникла обширная вспышка холеры: всего за три дня более  120 человек умерли от этой инфекции. Джон Сноу отметил местоположения случаев смерти от холеры на карте города и обнаружил, что они были сгруппированы вокруг водяного насоса на Broad Street. Он предложил, чтобы насос был вывден из обслуживания (была демонтирована рукоятка насоса), что помогло купировать распространение эпидемии. Это позволило ему сформулировать теорию распространения холеры через загрязнённую воду.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Оригинальная карта Джона Сноу</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Snow-original.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Карта Джона Сноу, воспроизведённая в Quantum GIS</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Snow-GIS.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Теплокарта распространения клещевого боррелиоза (QGIS)</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Borreliosis-map.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>ArcGIS Online</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/ArcGIS_Online.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>ГИС (географические информационные системы)</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Brucellosis-GIS.png' />
+</div>
+
+<ul>
+<li>Географическая информационная система - единый комплекс взаимодействующих компьютерных программ для хранения пространственных и аттрибутивных данных, а также их организации, анализа, обмена и отображения в географическом контексте (картирования).</li>
+<li>Свойства ГИС идеальны для эпидемиологического надзора за инфекционными заболеваниями, контроля их распространения и изучения вспышек.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Получение пространственных данных для ввода в ГИС</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Theodolite.png' />
+</div>
+
+<p>Географические координаты для включения их в пространственные данные могут быть получены в геодезических изысканиях с помощью теодолита (самый старый способ)...</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Получение пространственных данных для ввода в ГИС</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Snow-GIS-min.png' />
+</div>
+
+<p>при изучении географических объектов с известными координатами (оцифровка старых карт).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Получение пространственных данных для ввода в ГИС</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/LatLong.png' />
+</div>
+
+<p>Получение координат известных географических обектов (населённых пунктов) возможно на специализированных сайтах, например <a href="http://www.latlong.net/">LatLong</a>...</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Получение пространственных данных для ввода в ГИС</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Gearth.png' />
+</div>
+
+<p>или в программе <a href="https://www.google.com/earth/">Google: планета Земля</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Получение пространственных данных для ввода в ГИС</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin_eTrex.png' />
+</div>
+
+<ul class = "build incremental">
+<li>Однако наиболее удобным способом получения координат полевых объектов при расследовании вспышек, работе в природных очагах инфекций, выполнении эпидемиологических, эпизоотологических, паразитологических и др. исследований является использование возможностей глобальных систем позиционирования.</li>
+<li>Полевые команды используют GPS для получения точных пространственных данных и создания точечных слоёв ГИС.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:darkgrey;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="7">
+        Немного теории
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="blockquote" style="background:;">
+  <hgroup>
+    <h2>Система глобального позиционирования: определение</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<p><strong>Система глобального позиционирования</strong> — это спутниковая система навигации, обеспечивающая измерение расстояния, времени и определяющая местоположениe во всемирной системе координат WGS 84. Позволяет в любом месте Земли (исключая приполярные области), почти при любой погоде, а также в околоземном космическом пространстве определять местоположение и скорость объектов.</p>
+</blockquote>
+
+<p><br/>
+<em>Система координат WGS 84 используется по умолчанию в проектах свободной ГИС Quantum GIS.</em></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>GPS: техническая реализация</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/GPS-components.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>GPS: техническая реализация</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/GPS-components-min.png' />
+</div>
+
+<p>GPS состоит из трёх основных сегментов: космического, управляющего и пользовательского. </p>
+
+<ul class = "build incremental">
+<li><strong>Космический сегмент</strong> представлен спутниками GPS, которые транслируют сигнал из космоса.</li>
+<li><strong>Управляющий сегмент</strong> представляет собой главную управляющую станцию и несколько дополнительных станций, а также наземные антенны и станции мониторинга.</li>
+<li><strong>Пользовательский сегмент</strong> представлен приёмниками GPS.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Радар: измерение расстояния между двумя точками</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/radarops.gif' />
+</div>
+
+<div>
+<p>Радар испускает короткий радиоимпульс большой силы. Этот импульс испускается в одном направлении в зависимости от ориентации антенны и распространяется со скоростью света c<sub>0</sub>.</p>
+<p>Если в направлении распространения импульса есть препятствие, то радиоволна рассеивается во всех направлениях. Небольшая часть импульса отражается назад, к радару.</p>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Радар: измерение расстояния между двумя точками</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/radarops.gif' />
+</div>
+
+<p>Время возврата радиоволны t пропорционально расстоянию R до препятствия, котрое может быть вычислено (в простейшем случае) по формуле:
+\[
+R = {{c_0 \times t} \over 2}
+\]</p>
+
+<p>Это пример определения линейной координаты объекта.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>GPS: вычисление трёхмерных координат</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Принцип</strong>: Спутники GPS транслируют сигнал из космоса, и все приёмники GPS используют этот сигнал для вычисления своего положения в пространстве по трём координатам в режиме реального времени.</p>
+
+<p>Для определения трёхмерных координат <em>x</em>, <em>y</em> и <em>z</em> GPS-приёмнику нужно иметь решённые уравнения «расстояние равно произведению скорости света на разность моментов приема сигнала потребителем и момента его синхронного излучения от спутников» для всех <em>i</em> спутников:</p>
+
+<p>\[
+d_i = c_0 \times (t_{t,i} - t_{r,i}) + t_c = \sqrt{(x_i - x)^2 + (y_i - y)^2 + (z_i - z)^2}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Ошибки GPS</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Navstar.png' />
+</div>
+
+<p>На точность определения местоположения объекта с использованием GPS влияет <a href="http://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System">множество факторов</a>. 
+Например, это могут быть атмосферные явления. Задержка возвращаемого сигнала может быть обусловлена действием солнечного ветра и геомагнитными явлениями в ионосфере. Эта задержка может достигать 300 наносекунд, что вызывает погрешность в определении местоположения объекта в 100 метров (J. A. Klobuchar, 1981).
+В целом погрешность измерения времени возвращаемого сигнала составляет 10 наносекунд (3 - 5 метров). </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>Ошибки GPS</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Navstar.png' />
+</div>
+
+<p>Сигнал GPS искажают:</p>
+
+<ul class = "build incremental">
+<li>Атмосферные явления;</li>
+<li>Металлические конструкции;</li>
+<li>Другие твёрдые образования (здания, горы и т. п.);</li>
+<li>Электромагнитные поля (линии электропередач).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Ошибки GPS</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Navstar.png' />
+</div>
+
+<p>Понятно, что любое физическое препятствие на пути импульса искажает результат измерения.
+Запомните следующие <strong>правила</strong>:</p>
+
+<ol class = "build incremental">
+<li><strong>&quot;Чистое небо&quot;</strong>: используйте GPS на открытом пространстве, вдали от домов и деревьев.</li>
+<li>Хотя для получения координат в GPS достаточно 3 спутников, выполнять их съёмку необходимо при подключении <strong>не менее чем к 4 спутникам</strong>.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Глобальные спутниковые навигационные системы</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>США – <strong>Global Positioning System (GPS)</strong>: 32 спутника;</li>
+<li>Россия - <strong>Глобальная навигационная спутниковая система (ГЛОНАСС)</strong>: 29 спутников;</li>
+<li>ЕС - <strong>Galileo</strong>: 4 спутника; может взаимодействовать с GPS и ГЛОНАСС;</li>
+<li>Китай - <strong>Beidou</strong>: 15 спутников.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:darkgrey;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="5">
+        Портативный GPS навигатор Garmin Dakota&#174; 20
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Внешний вид навигатора Garmin Dakota 20</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-view.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: кнопка питания</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-power.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+        <ul>
+            <li><b>Для включения</b> Dakota нажмите кнопку питания;</li>
+            <li><b>Для  выключения</b> Dakota нажмите и удерживайте кнопку питания;</li>
+            <li><b>Для блокировки и разблокировки</b> экрана нажмите и быстро отпустите кнопку питания.</li>
+        </ul>    
+        </td>
+    </tr>
+</table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:darkgrey;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="7">
+        Подключение элементов питания
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Задняя поверхность Garmin Dakota</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-back.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Подключение элементов питания</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-back-min.png' />
+</div>
+
+<ul class = "build incremental">
+<li>Сдвиньте защёлку для того, чтобы снять крышку отсека батарей. </li>
+<li>Устройство Garmin Dakota работает от двух элементов питания типа AA (&quot;пальчиковые&quot; батарейки).</li>
+<li>Также можно использовать подзаряжаемые NiMH аккумуляторы.</li>
+<li>Вставьте элементы питания в отсек, совместив метки + и - на устройстве и элементах питания.</li>
+<li>Закройте крышку отсека.</li>
+<li>Если вы не собираетесь длительное время (несколько месяцев) использовать устройство, то извлеките элементы питания. Данные на устройстве при этом не теряются.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:darkgrey;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="5">
+        BaseCamp: перед тем, как в первый раз включить навигатор
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-card.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+        <ul>
+            <li>До начала работы с Garmin Dakota необходимо обновить прошивку устройства, используемые карты, а также дополнительное программное обеспечение.</li>
+            <li>Garmin Dakota может подключаться к компьютеру с помощью кабеля через интерфейс USB. На устройство могут быть записаны пользовательские файлы, как на обычный флеш-брелок (встроенная память устройства составляет 850 Мб; кроме того, может быть подключена дополнительная карта памяти).</li>
+        </ul>    
+        </td>
+    </tr>
+</table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Тем не менее, обновление программного обеспечения устройства осуществляется не прямым копированием, а через специальную программу, <a href="http://download.garmin.com/software/BaseCamp_446.exe"><strong>BaseCamp</strong></a> (раньше для этого использовалась программа <strong>MapSource</strong>).</li>
+<li>Русскоязычную версию BaseCamp для ПК можно загрузить по ссылке <a href="http://www8.garmin.com/support/download_details.jsp?id=4435">http://www8.garmin.com/support/download_details.jsp?id=4435</a></li>
+<li>После загрузки файла программы-установщика запустите её и согласитесь с внесением изменений в Windows.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: этапы установки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp1.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: этапы установки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp2.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: этапы установки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp3.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: этапы установки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp4.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: первый запуск</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp5.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: первый запуск</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp6.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: первый запуск</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp7.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: обучающее видео</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp7-1.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: обучающее видео</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp8.png" alt="img"></p>
+
+<p>При щелчке по пункту меню происходит переход на страницу <a href="https://www.youtube.com/watch?v=X3fmNBCL9R4">Youtube</a> с обучающими видео по работе с программой (на английском языке).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp10.png" alt="img"></p>
+
+<ul class = "build incremental">
+<li>После запуска BaseCamp, не закрывая программу,  необходимо подключить устройство Garmin Dakota к компьютеру через USB порт(устройство можно не включать).</li>
+<li>Слева, в разделе &quot;Устройства&quot;, появится идентификатор Garmin Dakota 20, а также значки для доступа к его внутренней памяти и к предустановленной базовой карте.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp11.png" alt="img"></p>
+
+<p>Щёлкните <strong>правой</strong> кнопкой мыши по значку предустановленной карты и в контекстном меню выберите пункт <em>&quot;Проверить обновление ПО: Dakota 20&quot;</em>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp12.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp13.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-51" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp14.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp15.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp16.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp17.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-55" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: обновление в программе BaseCamp</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp18.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+        <p align="center">
+            <img src='images/Garmin-Base_map1.png' />
+        </p>
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+        <p align="center">
+            <img src='images/Garmin-Base_map2.png' /> 
+        </p>
+        </td>
+    </tr>
+</table>
+
+<p>К сожалению, предустановленная в устройстве Garmin Dakota карта обладает низким уровнем детализации, что делает её непригодной для эпидемиологической работы. Это требует установки на устройство дополнительных карт.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-57" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/Maps-8.png" alt="img"></p>
+
+<ul class = "build incremental">
+<li>На <a href="https://my.garmin.com/maps/nuMaps.htm">сайте компании Garmin</a> представлен ряд карт как для покупки, так и для бесплатной загрузки (nüMaps).</li>
+<li>К сожалению, официальных карт Казахстана там нет. Это требует загрузки на устройство карт других производителей.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/KazGPSClub.png" alt="img"></p>
+
+<ul class = "build incremental">
+<li>Карты для навигаторов распространяются в виде файлов с расширением *.img. </li>
+<li>Хорошим источником карт для Казахстана является <a href="http://www.gpsclub.kz/">Казахстанский GPS клуб</a> (требуется бесплатная регистрация).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-59" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Вначале *.img карта должна быть <strong>установлена на компьютер</strong>. После подключения к компьютеру устройства Garmin эта карта устанавливается на навигатор <strong>с помощью программы BaseCamp</strong>.</li>
+<li>Коммерческие карты располагают также программами-установщиками, которые корректно регистрируют карты в системе для того, чтобы их &quot;видела&quot; программа BaseCamp.</li>
+<li>Свободно распространяемые карты представлены только файлом *.img, поэтому их нужно установить на компьютер с помощью программ <a href="http://meridian.perm.ru/04_maps/gpsimg/bin/MapSetToolKit_v1.77.zip">MapSetToolKit</a> и <a href="http://meridian.perm.ru/04_maps/gpsimg/bin/cgpsmapperFree.zip">cGPSmapper</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-60" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em>Установим на устройство Garmin Dakota свободно распространяемую карту Казахстана (основанную на OpenStreet Map)</em>.</p>
+
+<ol class = "build incremental">
+<li>Карту можно загрузить по <a href="http://www.gpsvsem.ru/map.php?id=994">ссылке</a> или найти в каталоге &quot;Map&quot; раздаточных материалов лекции.</li>
+<li>Программы <em>MapSetToolKit</em> и <em>cGPSmapper</em> можно загрузить по ссылкам на предыдущем слайде или найти в раздаточных материалах лекции в папке &quot;Software&quot;. Программы не требуют установки.</li>
+<li>Перед началом работы закройте программу <em>BaseCamp</em>.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-61" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap1.png" alt="img"></p>
+
+<ul class = "build incremental">
+<li>Запустите программу <em>MapSetToolKit</em>.</li>
+<li>Нажмите кнопку <em>&quot;Select IMG&quot;</em> для того, чтобы выбрать <strong>папку</strong>, в которой содежится файл *.img нужной карты. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-62" style="background:red;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="yellow">
+        ВНИМАНИЕ!<br/><br/>
+        Имя карты должно быть в формате: <br/><br/>
+        "восемь любых цифр + расширение имени файла"<br/><br/> 
+        (другие файлы программа "не видит").<br/><br/> 
+        Например, имя программы может быть <i>12345678.img</i>.
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-63" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap2.png" alt="img"></p>
+
+<ul>
+<li>В диалоговом окне выберите нужное имя папки.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-64" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap3.png" alt="img"></p>
+
+<ul>
+<li>Выберите мышью имя карты в списке <em>&quot;Source IMG files&quot;</em> и нажмите кнопку <em>&quot;Add&quot;</em> для того, чтобы добавить эту карту в список <em>&quot;Selected IMG files&quot;</em>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-65" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>На компьютер можно устанавливать не только одну карту но и целый набор (mapset).</li>
+<li>Но даже если устанавливается одна карта, она называется &quot;набором&quot;.</li>
+<li>Создайте папку для установки этого набора карт (карты). Например, <em>&quot;Документы/Garmin/Kazakhstan&quot;</em>.</li>
+<li>Нажмите кнопку <em>&quot;...&quot;</em> возле поля <em>&quot;Mapset directory&quot;</em> для того, чтобы выбрать папку для установки карты на компьютер.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-66" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap4.png" alt="img"></p>
+
+<ul>
+<li>В диалоговом окне выберите каталог установки.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-67" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap5.png" alt="img"></p>
+
+<ul class = "build incremental">
+<li>В выпадающем списке <em>&quot;CodePage&quot;</em> выберите значение <em>&quot;1251&quot;</em>.</li>
+<li>Нажмите кнопку <em>&quot;...&quot;</em> рядом с полем <em>&quot;TYP files&quot;</em> для того, чтобы выбрать вспомогательный файл *.typ.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-68" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap6.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-69" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>При установке карты важно иметь лишь файл *.img. Файлы *.typ могут и осутствовать. Это не препятствует установке карты на компьютер.</li>
+<li>В случае отсутствия файла *.typ в поле <em>&quot;Family ID&quot;</em> (идентификатор семейства) вводим любое число. Оно должно быть уникальным среди всех наборов карт, установленных на вашем компьютере (все их видно справа в таблице <em>&quot;Mapset installed&quot;</em> в колонке <em>&quot;FID&quot;</em>).</li>
+<li>Если вы используете файл *.typ, всё равно в поле <em>&quot;Family ID&quot;</em> введите любое число (оно потом будет изменено на другое, взятое из файла *.typ).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-70" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap7.png" alt="img"></p>
+
+<ul>
+<li>Нажмите кнопку <em>&quot;...&quot;</em> рядом с полем <em>&quot;cgpsmapper/cpreview folder&quot;</em>, чтобы выбрать папку, в которой находится программа <em>&quot;cGPSmapper&quot;</em>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-71" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/AddMap8.png" alt="img"></p>
+
+<ul>
+<li><em>Важно!</em> Поставьте флажок в переключателе <em>&quot;Install in Mapsorce&quot;</em> для того, чтобы устанавливаемая карта была &quot;видна&quot; в программе <em>BaseCamp</em>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-72" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/AddMap9.png' />
+</div>
+
+<ul class = "build incremental">
+<li>Нажмите кнопку <em>&quot;START&quot;</em> для того, чтобы установить карту на компьютер.</li>
+<li>Если вы использовали *.typ файл, то появится диалоговое окно, предлагающее согласовать код продукта с таковым из TYP файла. Примите это предложение.</li>
+<li>После появления нескольких консольных (чёрных) окон в конце должно появиться окошко с сообщением <em>&quot;Convert completed&quot;</em>. Это означает, что карта успешно установлена на компьютер.</li>
+<li>Теперь можно установить на навигатор. Запустите программу <em>BaseCamp</em> и подключите через USB порт устройство Garmin Dakota.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-73" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/BaseCamp19.png' />
+</div>
+
+<ul class = "build incremental">
+<li>Выберите установленную карту в выпадающем списке в левой части программы <em>BaseCamp</em>.</li>
+<li>Если этот список отсутствует, щёлкните правой кнопкой мыши по свободному месту инструментальной панели и выберите в контекстном меню пункт <em>&quot;Карты&quot;</em>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-74" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/BaseCamp20.png' />
+</div>
+
+<ul>
+<li>Выберите в меню программы <em>BaseCamp</em> Карты - Установить карты.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-75" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp21.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-76" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp22.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-77" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp23.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-78" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: загрузка дополнительных карт</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp24.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-79" style="background:darkgrey;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="7">
+        Полевая работа с Garmin Dakota&#174; 20
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-80" style="background:lightblue;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="7">
+        Подключение к спутникам
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-81" style="background:;">
+  <hgroup>
+    <h2>Проверьте себя</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>С каким числом спутников должно установить соединение устройство Garmin Dakota для корректного определения географических координат?</p>
+
+<ol>
+<li>Достаточно связи с одним спутником;</li>
+<li>С двумя;</li>
+<li>С тремя;</li>
+<li><em>С четырьмя и более</em>.</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>Необходимо по одному спутнику для каждой из координат в трёхмерном пространстве плюс ещё как минимум один - для коррекции координат.</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>Один спутник позволяет установить только расстояние между объектами. Два спутника позволяют установить координаты в двумерном пространстве, три - в трёхмерном (x, y, z). Однако, поскольку при рассеянии сигнала со спутников препятствиями и атмосферными явлениями возникает погрешность в определении координат, необходимо большее число спутников для корректировки вычисления. Поэтому правильный ответ - 4.</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-82" style="background:;">
+  <hgroup>
+    <h2>Проверьте себя</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Что влияет на качество сигнала, получаемого от спутников?</p>
+
+<ol>
+<li>Горы;</li>
+<li>Линии электропередач;</li>
+<li>Здания;</li>
+<li><em>Всё вышеизложенное</em>.</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>Задержка прохождения сигнала вызывает погрешность в определении координат.</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>На качество сигнала, получаемого от спутников, влияют атмосферные явления, электромагнитные поля и любые физические препятствия. Поэтому правильный ответ - 4.</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-83" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: подключение к спутникам</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>После включения навигатора на дисплее появляется страница-приветствие, а затем страница главного меню.</li>
+<li>Для возможности уверенного приёма сигналов со спутников следует находиться вдали от высоких зданий, деревьев и линий электропередач. Основное правило включения навигатора: <strong>беспрепятственный обзор неба</strong>.</li>
+<li>Включение навигатора в помещении приводит к напрасной трате энергии в батарее, т. к. устройство напрасно ищет спутники.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-84" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: подключение к спутникам</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Для расчёта текущего местоположения навигатор в течение определённого времени должен собрать необходимые спутниковые данные. Различают три типа режима определения местоположения навигатора: <em>холодный</em>, <em>тёплый</em> и <em>горячий</em> старт.</p>
+
+<ul class = "build incremental">
+<li>При <strong>холодном старте</strong> навигатор не имеет информации о своём местонахождении, поэтому поиск спутников занимает продолжительное время — до 20 и более минут в зависимости от внешних условий. Обычно холодный старт наблюдается при первом включении навигатора или при перемещении на значительное расстояние от места предыдущего включения.</li>
+<li><strong>Тёплый старт</strong> означает, что навигатор сохранил в памяти альманах, полученный при предыдущем включении, а также сохранил информацию о времени, пусть и с небольшой погрешностью. Время приёма сигнала при этом сокращается до нескольких минут.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-85" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: подключение к спутникам</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Для расчёта текущего местоположения навигатор в течение определённого времени должен собрать необходимые спутниковые данные. Различают три типа режима определения местоположения навигатора: <em>холодный</em>, <em>тёплый</em> и <em>горячий</em> старт.</p>
+
+<ul class = "build incremental">
+<li>Наконец, <strong>горячий старт</strong> — когда навигатор был выключен совсем недавно и данные альманаха и эфемерид не успели устареть. Время позиционирования может быть сокращено до 10–20 секунд.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-86" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: подключение к спутникам</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Включите устройство для выхода в главное меню.</p>
+
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-main_menu1.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+        <ul>
+            <li>В нижней части главного меню имеется индикатор связи со спутниками;</li>
+            <li>В случае отсутствия связи полоски индикатора будут серыми; число зелёных полосок указывает на силу соединения;</li>
+            <li>Для  отображения страницы связи со спутниками нажмите и удерживайте примерно 2 секунды значок идикатора.</li>
+        </ul>    
+        </td>
+    </tr>
+</table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-87" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: подключение к спутникам</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-satellites.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+        <ul>
+            <li>На дисплее навигатора будет схематично показано расположение спутников относительно Вашего текущего местоположения;</li>
+            <li>Внешняя окружность соответствует линии горизонта, внутренняя – 45 градусов над горизонтом;</li>
+            <li>На схеме также показаны номера спутников. Гистограмма в нижней части дисплея показывает мощность сигналов, регистрируемую навигатором от каждого спутника.</li>
+        </ul>    
+        </td>
+    </tr>
+</table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-88" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: подключение к спутникам</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-satellites-1.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-89" style="background:lightblue;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="7">
+        Настройка Garmin Dakota&#174; 20
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-90" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-main_menu2.png' />
+</div>
+
+<p>В главном меню нажмите на кнопку <em>&quot;Настройка&quot;</em> для перехода к странице настроек устройства.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-91" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-settings.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+        <ul>
+            <li>Кнопки страницы настройки предоставляют доступ ко многим разделам;</li>
+            <li>Нас интересуют лишь кнопки <i>Система</i>, <i>Отображение</i>, <i>Карта</i> и <i>Единицы</i>;</li>
+            <li>Для доступа к кнопке <i>Единицы</i>, выходящей за пределы экрана навигатора, используйте кнопку "Стрелка вниз".</li>
+        </ul>    
+        </td>
+    </tr>
+</table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-92" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-GPS1.png' />
+</div>
+
+<ul class = "build incremental">
+<li>Нажмите кнопку <em>&quot;Система&quot;</em> для того, чтобы перейти к настройке основных параметров устройства.</li>
+<li>Здесь требует настройки лишь тип GPS. Нажмите на верхнюю кнопку страницы.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-93" style="background:;">
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-GPS2.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+        <ul>
+            <li>В Garmin Dakota 20 имеется 3 типа GPS: нормальный, WAAS и демо-режим.</li>
+            <li>WAAS (англ. wide area augmentation system) — система распространения поправок к данным, передаваемым навигационной системой GPS. Дополняет GPS, повышая точность определения координат.</li>
+            <li>Демо-режим имитирует GPS без реального подключения к спутникам.</li>
+        </ul>    
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<p>К сожалению, WAAS действует лишь на территории северной Америки. Поэтому нам нужно включить <strong>нормальный</strong> режим GPS.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-94" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-calibration.png' />
+</div>
+
+<ul class = "build incremental">
+<li>Нажмите кнопку <em>&quot;Отображение&quot;</em> на странице главного меню для того, чтобы перейти к настройке основных параметров отображения графических элементов на экране устройства.</li>
+<li>Здесь требует настройки лишь калибровка экрана. Нажмите на нижнюю кнопку страницы.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-95" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-screen1.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-screen2.png' />
+        </td>
+    </tr>
+</table>
+
+<ul class = "build incremental">
+<li>Для того, чтобы навигатор правильно реагировал на нажатия пальцем на сенсорный экран, последний следует откалибровать.</li>
+<li>Для этого необходимо последовательно прикоснуться к чёрным точкам пальцем и подтвердить окончание калибровки.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-96" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-maps.png' />
+</div>
+
+<ul class = "build incremental">
+<li>Нажмите кнопку <em>&quot;Карта&quot;</em> на странице главного меню для того, чтобы перейти к настройке карт устройства.</li>
+<li>Здесь требует настройки лишь отображение нужных карт на устройстве. Нажмите на нижнюю кнопку страницы.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-97" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-maps_set1.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-maps_set2.png' />
+        </td>
+    </tr>
+</table>
+
+<ul class = "build incremental">
+<li>Для того, чтобы настроить какую-либо карту, нужно нажать на её кнопку.</li>
+<li>На странице карты нажмите кнопку <em>&quot;i&quot;</em> для того, чтобы просмотреть информацию об этой карте.</li>
+<li>Для отключения карты нажмите кнопку <em>&quot;Отключить.&quot;</em></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-98" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-Kazakhstan1.png' />
+        </td>
+        <td width="50%" style="border: none; padding: 0cm">
+            <img src='images/Garmin-Kazakhstan2.png' />
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<p>На имеющемся у вас устройстве Garmin Dakota следует отключить все карты, кроме ранее установленной карты Казахстана.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-99" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: настройка</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Самостоятельная работа</strong></p>
+
+<ol>
+<li>Включите устройство Garmin Dakota.</li>
+<li>Перейдите на страницу настроек устройства, переключите GPS в режим <em>&quot;Demo&quot;</em>.</li>
+<li>Вернитесь в меню настройки, переключите устройство с американских единиц измерения на метрические.</li>
+</ol>
+
+<div style='text-align: center;'>
+<br/>
+<a class="btn btn-large btn-danger" rel="popover" data-content="В главном меню нажмите кнопку <i>Настройка</i>. <br/> На странице настройки нажмите кнопку <i>Стрелка вниз</i>. <br/> Нажмите кнопку <i>Единицы</i>. <br/> Нажимайте по очереди все кнопки и затем нажимайте кнопку <i>Метрические</i>." data-original-title="" id='example'>Нажмите для подсказки</a>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-100" style="background:lightblue;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="5">
+        Снятие топографической информации
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-101" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: путевые точки</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-points1.png' />
+</div>
+
+<ul class = "build incremental">
+<li><strong>Путевыми точками</strong> называются местоположения или отметки на электронной карте навигатора, которые можно записывать в память прибора.</li>
+<li> Путевые точки используются при составлении маршрутов, а также для прямолинейной навигации в режиме <strong>СТАРТ</strong> к выбранной путевой точке.</li>
+<li>Путевые точки навигатора могут быть экспортированы в качестве слоёв ГИС и стать основой для создания пространственных данных.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-102" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: путевые точки</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src='images/Garmin-main_menu3.png' />
+</div>
+
+<p>Существует несколько способов создания путевых или, в терминах Garmin Dakota, <em>маршрутных</em> точек.</p>
+
+<ul class = "build incremental">
+<li>Во-первых, можно нажать кнопку <em>&quot;Отмет. марш. тчк.&quot;</em> в главном меню навигатора для того, чтобы отметить текущее положение исследователя в качестве маршрутной точки (самый точный способ).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-103" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: путевые точки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points2.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points3.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points4.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<ul class = "build incremental">
+<li>Во-вторых, независимо от того, находится навигатор в режиме приёма спутниковых сигналов 2D/3D или GPS отключён, путевую (маршрутную) можно создать с помощью страницы карты. Находясь на странице карты надо, прикоснувшись пальцем к сенсорному экрану, поместить указатель в виде булавки на объект / точку, для которых надо создать маршрутную точку. </li>
+<li>Рядом с названием объекта (точки) необходимо нажать на кнопку с тремя полосками для перехода на страницу управления маршрутной точкой.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-104" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: путевые точки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points2.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points3.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points4.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<ul class = "build incremental">
+<li>Сохранить маршрутную точку можно, нажав на кнопку с флажком.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-105" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: путевые точки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points5.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points6.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points7.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<ul class = "build incremental">
+<li>После создания путевой точки можно сохранить её с параметрами по умолчанию, нажав кнопку <em>&quot;Сохранить&quot;</em> либо изменить её имя или другие параметры, нажав кнопку <em>&quot;Сохранить и править&quot;</em>. </li>
+<li>Принять изменения можно, нажав на кнопку с зелёным флажком.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-106" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: путевые точки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points8.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points9.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points10.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<ul class = "build incremental">
+<li>Доступ к созданным пользователем путевым точкам можно получить с помощью кнопки <em>&quot;Менеджер маршр. тчк.&quot;</em> главного меню.</li>
+<li>Получить доступ к странице путевой точки можно, нажав на кнопку с её именем.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-107" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: путевые точки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points10.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points11.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-points7.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<ul class = "build incremental">
+<li>Отредактировать свойства путевой точки можно, нажав на кнопку с изображением карандаша на её странице.</li>
+<li>В том числе можно удалить путевую точку. Для того, чтобы увидеть кнопку удаления, нажмите дважды кнопку <em>&quot;Стрелка вниз&quot;</em> на странице точки.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-108" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks1.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks2.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks3.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<ul class = "build incremental">
+<li><strong>Маршрут</strong> представляет собой последовательность нескольких промежуточных путевых точек, которые приведут Вас к конечному пункту назначения. Точки соединены линией - предполагаемым направлением движения.</li>
+<li>Направление движения (пройденный путь) называется <strong>треком</strong>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-109" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks1.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks2.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks3.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<ul class = "build incremental">
+<li>В памяти устройства Garmin Dakota может храниться до 200 треков и до 10 000 точек пройденного маршрута.</li>
+<li>Для доступа на страницу управления треками нужно нажать на кнопку <em>&quot;Менеджер трека&quot;</em> главного меню.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-110" style="background:;">
+  <hgroup>
+    <h2>Garmin Dakota: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <table width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks1.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks2.png' /></p>
+        </td>
+        <td width="33%" style="border: none; padding: 0cm">
+            <p align="center"><img src='images/Garmin-tracks3.png' /></p>
+        </td>
+    </tr>
+</table>
+
+<p><br/></p>
+
+<p>Создание и изменение маршрутов происходит с помощью <em>&quot;Страницы маршрутов&quot;</em> (для доступа к ней необходимо нажать кнопку <em>&quot;План-щик маршрутов&quot;</em>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-111" style="background:red;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="yellow">
+        ВНИМАНИЕ!<br/><br/>
+        Полноценные маршруты удобнее создавать на компьютере <br/><br/>
+        в программе BaseCamp<br/><br/> 
+        (впоследствии их можно экспортировать на устройство).<br/><br/>
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-112" style="background:darkgrey;">
+  <article data-timings="">
+    <p><a name='3'></p>
+
+<div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color="white" size="6">
+        Работа с маршрутами и треками в BaseCamp
+    </font>
+</div>
+
+<p></a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-113" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp30.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-114" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp31.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-115" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp32.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-116" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp33.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-117" style="background:;">
+  <hgroup>
+    <h2>BaseCamp: маршруты и треки</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="images/BaseCamp34.png" alt="img"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-118" style="background:#CBE7A5;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <font color=#800000>
+        В последующем карту kml можно просмотреть в Google Earth<br/><br/>
+        или добавить в QuantumGIS в виде точечного слоя.<br/><br/>
+        Но это уже другая история...<br/><br/>
+    </font>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-119" style="background:lightblue;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+   <b>Об авторе</b><br/><br/>
+   <img src='images/Me.png' />
+   <br/><br/>
+  <b>Кузнецов Андрей Николаевич</b><br/><br/>
+   <i>к. м. н., с. н. с. лаборатории бруцеллёза<br/><br/> 
+   Казахского научного центра карантинных и зоонозных инфекций<br/><br/>
+   <a href='mailto:linmedsoft@gmail.com'>linmedsoft@gmail.com</a><br/><br/>
+   <a href='mailto:akuznecov@kscqzd.kz'>akuznecov@kscqzd.kz</a><br/><br/>
+   <a href='https://www.linkedin.com/in/andreynkuznetsov'>Сеть профессионалов LinkedIn</a><br/><br/>
+   <a href='http://www.researchgate.net/profile/Andrey_Kuznetsov11'>Сеть исследователей ResearchGate</p></a>
+   </i>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Содержание'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='GPS'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Эпидемиология и пространственные данные'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Пространственные данные'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Пространственная эпидемиология'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Джон Сноу и картирование заболеваний'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Оригинальная карта Джона Сноу'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Карта Джона Сноу, воспроизведённая в Quantum GIS'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Теплокарта распространения клещевого боррелиоза (QGIS)'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='ArcGIS Online'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='ГИС (географические информационные системы)'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Получение пространственных данных для ввода в ГИС'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Получение пространственных данных для ввода в ГИС'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Получение пространственных данных для ввода в ГИС'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Получение пространственных данных для ввода в ГИС'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Получение пространственных данных для ввода в ГИС'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Система глобального позиционирования: определение'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='GPS: техническая реализация'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='GPS: техническая реализация'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Радар: измерение расстояния между двумя точками'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Радар: измерение расстояния между двумя точками'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='GPS: вычисление трёхмерных координат'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Ошибки GPS'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Ошибки GPS'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Ошибки GPS'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Глобальные спутниковые навигационные системы'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title=''>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Внешний вид навигатора Garmin Dakota 20'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Garmin Dakota: кнопка питания'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title=''>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Задняя поверхность Garmin Dakota'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Подключение элементов питания'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title=''>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Garmin Dakota: обновление в программе BaseCamp'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Garmin Dakota: обновление в программе BaseCamp'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='BaseCamp: этапы установки'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='BaseCamp: этапы установки'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='BaseCamp: этапы установки'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='BaseCamp: этапы установки'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='BaseCamp: первый запуск'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='BaseCamp: первый запуск'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='BaseCamp: первый запуск'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='BaseCamp: обучающее видео'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='BaseCamp: обучающее видео'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Garmin Dakota: обновление в программе BaseCamp'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Garmin Dakota: обновление в программе BaseCamp'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Garmin Dakota: обновление в программе BaseCamp'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Garmin Dakota: обновление в программе BaseCamp'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Garmin Dakota: обновление в программе BaseCamp'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Garmin Dakota: обновление в программе BaseCamp'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='Garmin Dakota: обновление в программе BaseCamp'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='Garmin Dakota: обновление в программе BaseCamp'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Garmin Dakota: обновление в программе BaseCamp'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Garmin Dakota: загрузка дополнительных карт'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Garmin Dakota: загрузка дополнительных карт'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Garmin Dakota: загрузка дополнительных карт'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Garmin Dakota: загрузка дополнительных карт'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Garmin Dakota: загрузка дополнительных карт'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Garmin Dakota: загрузка дополнительных карт'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title=''>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='Garmin Dakota: загрузка дополнительных карт'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='Garmin Dakota: загрузка дополнительных карт'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='Garmin Dakota: загрузка дополнительных карт'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Garmin Dakota: загрузка дополнительных карт'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Garmin Dakota: загрузка дополнительных карт'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='Garmin Dakota: загрузка дополнительных карт'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='Garmin Dakota: загрузка дополнительных карт'>
+         69
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='Garmin Dakota: загрузка дополнительных карт'>
+         70
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='Garmin Dakota: загрузка дополнительных карт'>
+         71
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='Garmin Dakota: загрузка дополнительных карт'>
+         72
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='Garmin Dakota: загрузка дополнительных карт'>
+         73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='Garmin Dakota: загрузка дополнительных карт'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='Garmin Dakota: загрузка дополнительных карт'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='Garmin Dakota: загрузка дополнительных карт'>
+         76
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='Garmin Dakota: загрузка дополнительных карт'>
+         77
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='Garmin Dakota: загрузка дополнительных карт'>
+         78
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title=''>
+         79
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title=''>
+         80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='Проверьте себя'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='Проверьте себя'>
+         82
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=83 title='Garmin Dakota: подключение к спутникам'>
+         83
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=84 title='Garmin Dakota: подключение к спутникам'>
+         84
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=85 title='Garmin Dakota: подключение к спутникам'>
+         85
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=86 title='Garmin Dakota: подключение к спутникам'>
+         86
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=87 title='Garmin Dakota: подключение к спутникам'>
+         87
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=88 title='Garmin Dakota: подключение к спутникам'>
+         88
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=89 title=''>
+         89
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=90 title='Garmin Dakota: настройка'>
+         90
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=91 title='Garmin Dakota: настройка'>
+         91
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=92 title='Garmin Dakota: настройка'>
+         92
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=93 title=''>
+         93
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=94 title='Garmin Dakota: настройка'>
+         94
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=95 title='Garmin Dakota: настройка'>
+         95
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=96 title='Garmin Dakota: настройка'>
+         96
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=97 title='Garmin Dakota: настройка'>
+         97
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=98 title='Garmin Dakota: настройка'>
+         98
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=99 title='Garmin Dakota: настройка'>
+         99
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=100 title=''>
+         100
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=101 title='Garmin Dakota: путевые точки'>
+         101
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=102 title='Garmin Dakota: путевые точки'>
+         102
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=103 title='Garmin Dakota: путевые точки'>
+         103
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=104 title='Garmin Dakota: путевые точки'>
+         104
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=105 title='Garmin Dakota: путевые точки'>
+         105
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=106 title='Garmin Dakota: путевые точки'>
+         106
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=107 title='Garmin Dakota: путевые точки'>
+         107
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=108 title='Garmin Dakota: маршруты и треки'>
+         108
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=109 title='Garmin Dakota: маршруты и треки'>
+         109
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=110 title='Garmin Dakota: маршруты и треки'>
+         110
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=111 title=''>
+         111
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=112 title=''>
+         112
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=113 title='BaseCamp: маршруты и треки'>
+         113
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=114 title='BaseCamp: маршруты и треки'>
+         114
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=115 title='BaseCamp: маршруты и треки'>
+         115
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=116 title='BaseCamp: маршруты и треки'>
+         116
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=117 title='BaseCamp: маршруты и треки'>
+         117
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=118 title=''>
+         118
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=119 title=''>
+         119
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
